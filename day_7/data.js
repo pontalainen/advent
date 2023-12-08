@@ -1,6 +1,33 @@
-const data1 = ['22333 252', '33322 330', '33222 540', '22233 966'];
+export const valueOrder = ['A', 'K', 'Q', 'J', 'T', '9', '8', '7', '6', '5', '4', '3', '2'];
 
-const data = [
+export const possibleTypes = [
+    {
+        hand: [5],
+        value: 7,
+    },
+    {
+        hand: [1, 4],
+        value: 6,
+    },
+    {
+        hand: [2, 3],
+        value: 5,
+    },
+    {
+        hand: [1, 1, 3],
+        value: 4,
+    },
+    {
+        hand: [1, 2, 2],
+        value: 3,
+    },
+    {
+        hand: [1, 1, 1, 2],
+        value: 2,
+    },
+];
+
+export const data = [
     '486AA 252',
     '24544 330',
     '33TTT 540',
@@ -1002,4 +1029,3 @@ const data = [
     '38783 86',
     '6646T 32',
 ];
-export default data;

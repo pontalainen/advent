@@ -1,4 +1,4 @@
-import data from './data.js';
+import { data, possibleTypes, valueOrder } from './data.js';
 
 function line(hand, bid) {
     return {
@@ -9,35 +9,6 @@ function line(hand, bid) {
 }
 
 const objectData = data.map((element) => line(element.slice(0, 5), element.slice(6, element.length)));
-
-const valueOrder = ['A', 'K', 'Q', 'J', 'T', '9', '8', '7', '6', '5', '4', '3', '2'];
-
-const possibleTypes = [
-    {
-        hand: [5],
-        value: 7,
-    },
-    {
-        hand: [1, 4],
-        value: 6,
-    },
-    {
-        hand: [2, 3],
-        value: 5,
-    },
-    {
-        hand: [1, 1, 3],
-        value: 4,
-    },
-    {
-        hand: [1, 2, 2],
-        value: 3,
-    },
-    {
-        hand: [1, 1, 1, 2],
-        value: 2,
-    },
-];
 
 const equalArray = (a, b) => {
     return a.length === b.length && a.every((value, index) => value === b[index]);
@@ -84,4 +55,5 @@ sortedData.map((line, index) => {
     return line;
 });
 
-console.log(totalWinnings, 'totalWinnings');
+console.log(totalWinnings);
+// 254024898

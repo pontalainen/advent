@@ -14,3 +14,4 @@ data.map((line) => {
     totalSum += Number(sum[0]);
 });
 console.log(totalSum);
+// 53921
