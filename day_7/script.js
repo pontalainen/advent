@@ -10,6 +10,8 @@ function line(hand, bid) {
 
 const objectData = data.map((element) => line(element.slice(0, 5), element.slice(6, element.length)));
 
+const valueOrder = ['A', 'K', 'Q', 'J', 'T', '9', '8', '7', '6', '5', '4', '3', '2'];
+
 const possibleTypes = [
     {
         hand: [5],
@@ -64,10 +66,10 @@ const sortedData = sortedHands.sort((a, b) => {
         return -1;
     }
     for (let i = 0; i <= 5; i += 1) {
-        if (a.hand[i] > b.hand[i]) {
+        if (valueOrder.indexOf(a.hand[i]) < valueOrder.indexOf(b.hand[i])) {
             return 1;
         }
-        if (a.hand[i] < b.hand[i]) {
+        if (valueOrder.indexOf(a.hand[i]) > valueOrder.indexOf(b.hand[i])) {
             return -1;
         }
     }
