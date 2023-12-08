@@ -22,7 +22,8 @@ for (let allSame = false; allSame === false; ) {
     startNodes.map((startNode) => {
         let currentNode;
         let totalTurns = 0;
-        // Restarts the turn iteration of the array ends
+
+        // Restarts the turn iteration if the array ends
         for (let done = false; done === false; ) {
             // Iterates over all turns
             turns.map((turn) => {
