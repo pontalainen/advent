@@ -10,17 +10,20 @@ const nodes = nodesRaw.map((node) => {
     };
 });
 
-const startNodes = nodes.find((node) => node.baseEnd === 'A');
-console.log(startNodes);
-// let currentNode;
-// let totalTurns = 0;
-// for (let done = false; done === false; ) {
-//     turns.map((turn) => {
-//         currentNode = nodes.find((node) => node.base === (currentNode ? currentNode[turn] : startNode[turn]));
-//         totalTurns += 1;
-//         if (currentNode.base === 'ZZZ') {
-//             console.log(totalTurns);
-//             done = true;
-//         }
-//     });
-// }
+const startNodes = nodes.filter((node) => node.baseEnd === 'A');
+let totalTotal = 0;
+startNodes.map((startNode) => {
+    let currentNode;
+    let totalTurns = 0;
+    for (let done = false; done === false; ) {
+        turns.map((turn) => {
+            currentNode = nodes.find((node) => node.base === (currentNode ? currentNode[turn] : startNode[turn]));
+            totalTurns += 1;
+            if (currentNode.baseEnd === 'Z') {
+                totalTotal += totalTurns;
+                done = true;
+            }
+        });
+    }
+});
+console.log(totalTotal);
