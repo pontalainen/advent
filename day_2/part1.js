@@ -34,3 +34,4 @@ data.map((line) => {
     }
 });
 console.log(gameIdSum);
+// 2162

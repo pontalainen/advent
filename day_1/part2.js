@@ -19,3 +19,4 @@ data.map((line) => {
     totalSum += Number(sum[0]);
 });
 console.log(totalSum);
+// TODO 54170 not correct
