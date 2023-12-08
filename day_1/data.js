@@ -1,4 +1,43 @@
-const data = [
+export const letterNumbers = [
+    {
+        letters: 'one',
+        value: '1',
+    },
+    {
+        letters: 'two',
+        value: '2',
+    },
+    {
+        letters: 'three',
+        value: '3',
+    },
+    {
+        letters: 'four',
+        value: '4',
+    },
+    {
+        letters: 'five',
+        value: '5',
+    },
+    {
+        letters: 'six',
+        value: '6',
+    },
+    {
+        letters: 'seven',
+        value: '7',
+    },
+    {
+        letters: 'eight',
+        value: '8',
+    },
+    {
+        letters: 'nine',
+        value: '9',
+    },
+];
+
+export const data = [
     'dssmtmrkonedbbhdhjbf9hq',
     '2njsevenszzsfltconesixhsflpbpd',
     '6shgbprkpbksnfourfivemvncvg2eight',
@@ -1000,5 +1039,3 @@ const data = [
     'ncqpkzh5twooneoneqfxlqbjjhqsrlkhvdnvtbzpcbj',
     '449three45three',
 ];
-
-export default data;
