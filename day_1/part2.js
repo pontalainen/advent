@@ -1,8 +1,13 @@
-import data from './data.js';
+import { data, letterNumbers } from './data.js';
 
 let totalSum = 0;
 data.map((line) => {
-    const lineArr = line.split('');
+    let numberLine = line;
+    letterNumbers.map((ln) => {
+        numberLine = numberLine.replaceAll(ln.letters, ln.value);
+    });
+
+    const lineArr = numberLine.split('');
     const lineInts = [
         lineArr.filter((char) => {
             return Number(char);
