@@ -2,11 +2,6 @@
     "name": "advent",
     "version": "1.0.0",
     "description": "Advent code calendar",
-    "main": "index.js",
-    "scripts": {
-        "build": "babel ./day_7 --out-dir dist",
-        "script": "node dist/script.js"
-    },
     "type": "module",
     "author": "Pontus Olsson",
     "license": "ISC",
