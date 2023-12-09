@@ -1,4 +1,5 @@
 const fs = require('fs');
+// import fs from 'fs';
 
 const strpkg = fs.readFileSync('package.json');
 const _ = require('lodash');
