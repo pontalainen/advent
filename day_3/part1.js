@@ -1,13 +1,20 @@
 import data from '../inputs/day3.js';
 
 const r = /\d+/g;
-const newData = data.map((line) => ({
-    string: line.split(''),
-    numbers: line.match(r).map((number) => ({
-        value: number,
-        start: line.search(new RegExp(`\\b${number}\\b`)),
-    })),
-}));
+const newData = data.map((line) => {
+    let prevStart = 0;
+    return {
+        string: line.split(''),
+        numbers: line.match(r).map((number) => {
+            const start = line.indexOf(number, prevStart);
+            prevStart = start;
+            return {
+                value: number,
+                start,
+            };
+        }),
+    };
+});
 
 let lineSymbols = '';
 data.forEach((line) => {
@@ -61,4 +68,4 @@ newData.forEach((line, index) => {
     }
 });
 console.log(partSum);
-// TODO 528628
+// TODO 527651
