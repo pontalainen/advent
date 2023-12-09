@@ -1,21 +1,15 @@
-import { data, letterNumbers } from './data.js';
+import { data, letterNumbers } from '../inputs/day1.js';
 
 let totalSum = 0;
-data.map((line) => {
+data.forEach((line) => {
     let numberLine = line;
-    letterNumbers.map((ln) => {
+    letterNumbers.forEach((ln) => {
         numberLine = numberLine.replaceAll(ln.letters, ln.value);
     });
 
     const lineArr = numberLine.split('');
-    const lineInts = [
-        lineArr.filter((char) => {
-            return Number(char);
-        }),
-    ];
-    const sum = lineInts.map((line) => {
-        return line[0] + line[line.length - 1];
-    });
+    const lineInts = [lineArr.filter((char) => Number(char))];
+    const sum = lineInts.map((l) => l[0] + l[l.length - 1]);
     totalSum += Number(sum[0]);
 });
 console.log(totalSum);

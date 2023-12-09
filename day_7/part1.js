@@ -1,4 +1,4 @@
-import { data, possibleTypes, valueOrder } from './data.js';
+import { data, possibleTypes, valueOrder } from '../inputs/day7';
 
 function line(hand, bid) {
     return {
@@ -10,12 +10,11 @@ function line(hand, bid) {
 
 const objectData = data.map((element) => line(element.slice(0, 5), element.slice(6, element.length)));
 
-const equalArray = (a, b) => {
-    return a.length === b.length && a.every((value, index) => value === b[index]);
-};
+const equalArray = (a, b) => a.length === b.length && a.every((value, index) => value === b[index]);
 
 const sortedHands = objectData.map((element) => {
     const charMap = {};
+    // eslint-disable-next-line no-restricted-syntax
     for (const char of element.hand) {
         charMap[char] = (charMap[char] || 0) + 1;
     }
@@ -49,10 +48,10 @@ const sortedData = sortedHands.sort((a, b) => {
 
 let totalWinnings = 0;
 
-sortedData.map((line, index) => {
-    const winnings = Number(line.bid) * (index + 1);
+sortedData.map((l, index) => {
+    const winnings = Number(l.bid) * (index + 1);
     totalWinnings += winnings;
-    return line;
+    return l;
 });
 
 console.log(totalWinnings);

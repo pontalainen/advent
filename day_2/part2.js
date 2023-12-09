@@ -1,8 +1,8 @@
-import { data } from './data.js';
+import data from '../inputs/day2';
 
 let gamePowerSum = 0;
-data.map((line) => {
-    let maxes = {
+data.forEach((line) => {
+    const maxes = {
         red: 0,
         green: 0,
         blue: 0,
@@ -10,9 +10,9 @@ data.map((line) => {
 
     line.split(': ')[1]
         .split('; ')
-        .map((set) => {
-            Object.keys(maxes).map((color) => {
-                let colorString = set.split(', ').filter((string) => string.includes(color))[0];
+        .forEach((set) => {
+            Object.keys(maxes).forEach((color) => {
+                const colorString = set.split(', ').filter((string) => string.includes(color))[0];
                 if (typeof colorString === 'string') {
                     const colorNumber = Number(colorString.replace(` ${color}`, ''));
                     if (Number(colorString.replace(` ${color}`, '')) > maxes[color]) {

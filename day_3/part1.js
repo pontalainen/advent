@@ -1,4 +1,4 @@
-import data from './data.js';
+import data from '../inputs/day3.js';
 
 const r = /\d+/g;
 const newData = data.map((line) => ({

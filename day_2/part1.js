@@ -1,4 +1,4 @@
-import { data } from './data.js';
+import data from '../inputs/day2';
 
 const maxes = {
     red: 12,
@@ -7,13 +7,13 @@ const maxes = {
 };
 
 let gameIdSum = 0;
-data.map((line) => {
+data.forEach((line) => {
     let possible = true;
     line.split(': ')[1]
         .split('; ')
-        .map((set) => {
+        .forEach((set) => {
             const formatter = (color) => {
-                let colorString = set.split(', ').filter((string) => string.includes(color))[0];
+                const colorString = set.split(', ').filter((string) => string.includes(color))[0];
 
                 if (typeof colorString === 'string') {
                     return Number(colorString.replace(` ${color}`, ''));
