@@ -66,6 +66,11 @@ newData.forEach((line, index) => {
             }
         });
     }
+    console.log(line.numbers, 'line');
+    console.log();
+    console.log();
+    console.log();
 });
+
 console.log(partSum);
 // TODO 527651
