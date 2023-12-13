@@ -1,4 +1,4 @@
-import { seeds, maps } from '../inputs/day_5.js';
+import { seeds, maps } from '../inputs/day5.js';
 
 const seedsArr = seeds.split(' ');
 
@@ -16,4 +16,4 @@ for (const key in maps) {
     }
 }
 
-console.log(maps);
+seedsArr.forEach((seed) => {});
